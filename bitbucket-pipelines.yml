@@ -11,6 +11,8 @@ pipelines:
         script:
           - apt update
           - apt install -y nasm grub-pc-bin mtools xorriso qemu
-          - curl -s https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly
-          - rustup override add nightly
+          - curl -s https://static.rust-lang.org/rustup.sh > rusetup.sh
+          - chmod +x rusetup.sh
+          - ./rusetup.sh --channel=nightly
+          - ./rusetup.sh override add nightly
           - make iso
