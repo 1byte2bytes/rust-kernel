@@ -11,7 +11,8 @@ pipelines:
         script:
           - apt update
           - apt install -y nasm grub-pc-bin mtools xorriso qemu
-          - yes 1 | curl https://sh.rustup.rs -sSf | sh
+          - curl https://sh.rustup.rs > setup.sh
+          - yes 1 | ./setup.sh
           - source ~/.cargo/env
           - rustup override add nightly
           - make iso
