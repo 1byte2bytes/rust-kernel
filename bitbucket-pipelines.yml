@@ -9,6 +9,7 @@ pipelines:
   default:
     - step:
         script:
+          - apt update
           - apt install -y nasm grub-pc-bin mtools xorriso qemu
           - curl https://sh.rustup.rs -sSf | sh
           - source ~/.cargo/env
