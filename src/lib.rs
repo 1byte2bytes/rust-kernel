@@ -1,23 +1,28 @@
 #![feature(lang_items)]
+#![feature(const_fn)]
+#![feature(unique)]
 #![no_std]
 
 extern crate rlibc;
+extern crate volatile;
+extern crate spin;
+
+#[macro_use]
+mod vga_buffer;
 
 #[no_mangle]
 pub extern fn rust_main() {
-    // ATTENTION: we have a very small stack and no guard page
-
-    let hello = b"Hello World!";
-    let color_byte = 0x1f; // white foreground, blue background
-
-    let mut hello_colored = [color_byte; 24];
-    for (i, char_byte) in hello.into_iter().enumerate() {
-        hello_colored[i*2] = *char_byte;
-    }
-
-    // write `Hello World!` to the center of the VGA text buffer
-    let buffer_ptr = (0xb8000 + 1988) as *mut _;
-    unsafe { *buffer_ptr = hello_colored };
+    vga_buffer::clear_screen();
+    print!("   _____           _  ____   _____ \n");
+    print!("  / ____|         | |/ __ \\ / ____|\n");
+    print!(" | (___  _   _  __| | |  | | (___  \n");
+    print!("  \\___ \\| | | |/ _` | |  | |\\___ \\ \n");
+    print!("  ____) | |_| | (_| | |__| |____) |\n");
+    print!(" |_____/ \\__, |\\__,_|\\____/|_____/ \n");
+    print!("          __/ |                    \n");
+    print!("         |___/                     \n");
+    print!("\nSydOS Sweetie - Copyright Sydney Erickson 2016");
+    print!("\n----------------------------------------------\n");
 
     loop{}
 }
