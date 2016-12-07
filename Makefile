@@ -2,7 +2,7 @@
 arch ?= x86_64
 target ?= $(arch)-unknown-linux-gnu
 kernel := build/kernel-$(arch).bin
-iso := build/os-$(arch).iso
+iso := build/SydOS-$(arch).iso
 
 rust_os := target/$(target)/debug/libsyd_os.a
 linker_script := src/arch/$(arch)/linker.ld
