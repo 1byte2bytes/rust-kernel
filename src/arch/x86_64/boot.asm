@@ -6,6 +6,7 @@ bits 32
 start:
     ; point the cpu to the stack
     mov esp, stack_top
+    mov edi, ebx
 
     ; perform checks
     call check_multiboot
@@ -197,5 +198,5 @@ p3_table:
 p2_table:
     resb 4096
 stack_bottom:
-    resb 64
+    resb 4096
 stack_top:
