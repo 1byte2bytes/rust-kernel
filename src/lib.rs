@@ -22,27 +22,30 @@ pub extern fn rust_main(multiboot_information_address: usize) {
     print!(" |_____/ \\__, |\\__,_|\\____/|_____/ \n");
     print!("          __/ |                    \n");
     print!("         |___/                     \n");
-    print!("\nSydOS Sweetie - Copyright Sydney Erickson 2016");
-    print!("\n----------------------------------------------\n");
+    print!("\nSweetie Kernel - Copyright Sydney Erickson 2016");
+    print!("\n-----------------------------------------------\n");
 
     let boot_info = unsafe{ multiboot2::load(multiboot_information_address) };
     let memory_map_tag = boot_info.memory_map_tag()
         .expect("Memory map tag required");
 
     print!("memory areas:\n");
+    let mut total_memory = 0x0;
     for area in memory_map_tag.memory_areas() {
         print!("    start: 0x{:x}, length: 0x{:x}\n",
             area.base_addr, area.length);
+            total_memory += area.length;
     }
+    print!("Total memory: 0x{:x}\n\n", total_memory);
 
     let elf_sections_tag = boot_info.elf_sections_tag()
         .expect("Elf-sections tag required");
 
-    print!("kernel sections:\n");
+    /*print!("kernel sections:\n");
     for section in elf_sections_tag.sections() {
         print!("    addr: 0x{:x}, size: 0x{:x}, flags: 0x{:x}\n",
             section.addr, section.size, section.flags);
-    }
+    }*/
 
     let kernel_start = elf_sections_tag.sections().map(|s| s.addr)
         .min().unwrap();
