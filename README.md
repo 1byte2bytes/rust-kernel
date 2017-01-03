@@ -1,4 +1,6 @@
 #Sydney's Rust Kernel
+
+##About
 This kernel isn't really useful for much. It probably won't even build correctly for you because I messed up the dependancies somehow. But if you tinker with it and get it working or I fix it eventually it does work!
 
 ##What is this kernel?
@@ -18,6 +20,8 @@ It's a minimal 64 bit kernel made in Rust. Right now it uses Assembly to create 
 - Implementing a keyboard driver
 - Implementing a serial driver
 - Basic POSIX support(?)
+
+##Links
 
 ###Resources used
 http://os.phil-opp.com/
