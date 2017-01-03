@@ -21,11 +21,16 @@ It's a minimal 64 bit kernel made in Rust. Right now it uses Assembly to create 
 
 ###Resources used
 http://os.phil-opp.com/
+
 http://www.randomhacks.net/bare-metal-rust/
+
 http://wiki.osdev.org/Main_Page
 
 ###Useful links
 https://www.rust-lang.org/en-US/install.html
+
 http://www.nasm.us/
+
 https://crates.io/
+
 https://www.gnu.org/software/grub/
