@@ -84,6 +84,7 @@ pub extern "C" fn _Unwind_Resume() -> ! {
 #[lang = "eh_personality"] extern fn eh_personality() {}
 
 #[lang = "panic_fmt"]
+#[no_mangle]
 extern fn panic_fmt(fmt: core::fmt::Arguments, file: &'static str,
     line: u32) -> !
 {
