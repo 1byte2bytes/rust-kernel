@@ -1,0 +1,7 @@
+language: rust
+
+rust:
+  - nightly
+
+sudo: true
+script: apt-get install grub-pc xorriso build-essential && make iso
