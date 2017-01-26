@@ -7,7 +7,7 @@ pub const P4: *mut Table = 0xffffffff_fffff000 as *mut _;
 
 pub trait TableLevel {}
 pub trait HierarchicalLevel: TableLevel {
-    type: NextLevel: TableLevel;
+    type NextLevel: TableLevel;
 }
 
 pub enum Level4 {}
