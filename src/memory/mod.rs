@@ -3,6 +3,7 @@ pub use self::area_frame_allocator::AreaFrameAllocator;
 use self::paging::PhysicalAddress;
 
 mod area_frame_allocator;
+mod paging;
 
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Frame {
