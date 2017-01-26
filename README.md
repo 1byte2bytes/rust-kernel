@@ -1,4 +1,4 @@
-#Sydney's Rust Kernel
+#Sydney's Rust Kernel [![Build Status](https://travis-ci.org/1byte2bytes/rust-kernel.svg?branch=master)](https://travis-ci.org/1byte2bytes/rust-kernel)
 
 ##About
 This kernel isn't really useful for much. It probably won't even build correctly for you because I messed up the dependancies somehow. But if you tinker with it and get it working or I fix it eventually it does work!
