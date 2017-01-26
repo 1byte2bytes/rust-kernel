@@ -2,7 +2,7 @@ use memory::PAGE_SIZE;
 
 const ENTRY_COUNT: usize = 512;
 
-pub type PhyscialAddress = usize;
+pub type PhysicalAddress = usize;
 pub type VirtualAddress = usize;
 
 pub struct Page {
