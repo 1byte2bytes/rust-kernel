@@ -23,8 +23,8 @@ pub extern fn rust_main(multiboot_information_address: usize) {
     print!(" |_____/ \\__, |\\__,_|\\____/|_____/ \n");
     print!("          __/ |                    \n");
     print!("         |___/                     \n");
-    print!("\nSweetie Kernel - Copyright Sydney Erickson 2016");
-    print!("\n-----------------------------------------------\n");
+    print!("\nSweetie Kernel - Copyright Sydney Erickson 2016-2017");
+    print!("\n----------------------------------------------------\n");
 
     let boot_info = unsafe{ multiboot2::load(multiboot_information_address) };
     let memory_map_tag = boot_info.memory_map_tag()
