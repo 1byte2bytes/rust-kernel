@@ -5,3 +5,12 @@ rust:
 
 sudo: true
 script: sudo apt-get -y install grub-pc xorriso nasm build-essential && make iso
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "BMjV3HQh9vPdqk1eywKwx1ufxWPhClkVbXY3CX9YipWD+DugZB5IlQ527couHqHTGgxXBMG1dUEzoks2n07LrRtadG6x5h7XaFhnYnVR9HWScWT8+gY+KoEQXYc+0d4Jp1Hbu5lQvNLGLxu44cP0QtMzOMoA3beckZsT02Rx7zry1sMr/LL1O3+sYN4zv9cWFO/Zp0UzLPBXrfWpVIgT76HFSyY3j02/Va6ra3DPA9yA2ssOsz3j2WMlI0gcj+FMKBq6xSp0IdRDfuV1cxnoSmPrEscSbHUx4zUxoSrO135giek7pJGucLVU/SmnZ03PEytlpqoHBUD2JsedDAGwESq+beP7gBl+3Kjm4qBbnDqANO0JCjCDVwkwujMHi840WcQsBW6yp42vx+jmWE8OWT2w1vvj7DNJCZoZF3+0FUPRPVYHG/Vgyozznb9ljao0XyUGEyaq/Ptc8/K1+rBabr0TCW2xju1WlbK2xfiHOz5B0zPABJVa2nUslO34nt3e+bndPSOIKp94yzFCQFFU+A3auEVy9YjpXl3Qda9hxA63upatsQr83ZSkJr187JXxu6BsCROsS26PtVX8HJMFRHKWJ62w75d6NJcqmvYKDGsmgWoMjTIMJHC7eQhN7dVGeLVXpwx01T/ImHpn7oEBWhwWqWRRnIKaODzPena2Ius="
+  file: "build/SydOS-x86_64.iso"
+  skip_cleanup: true
+  on:
+    tags: true
