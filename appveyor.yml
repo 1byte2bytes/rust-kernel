@@ -25,8 +25,8 @@ install:
   - curl -sSf -o rustup-init.exe https://win.rustup.rs/
   - rustup-init.exe -y --default-host %TARGET% --default-toolchain %RUST_VERSION%
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
-  - rustc -Vv
-  - cargo -V
+  #- rustc -Vv
+  #- cargo -V
 
 before_deploy:
   # TODO Update this to build the artifacts that matter to you
