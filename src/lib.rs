@@ -3,6 +3,8 @@
 #![feature(unique)]
 #![no_std]
 
+#[macro_use]
+extern crate bitflags;
 extern crate rlibc;
 extern crate volatile;
 extern crate spin;
