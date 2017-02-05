@@ -37,10 +37,6 @@ pub struct Table<L: TableLevel> {
     level: PhantomData<L>,
 }
 
-pub struct Table {
-    entries: [Entry; ENTRY_COUNT],
-}
-
 impl<L> Table<L> where L: TableLevel {
     pub fn zero(&mut self) {
         for entry in self.entries.iter_mut() {
