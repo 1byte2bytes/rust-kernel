@@ -15,7 +15,7 @@ pub struct Page {
 
 pub fn translate(virtual_address: VirtualAddress) -> Option<PhysicalAddress> {
     let offset = virtual_address % PAGE_SIZE;
-    translate_page(Page::containing_address(virtual_address))
+    Page::translate_page(Page::containing_address(virtual_address))
         .map(|frame| frame.number * PAGE_SIZE + offset)
 }
 
